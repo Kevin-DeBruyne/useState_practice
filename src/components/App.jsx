@@ -3,15 +3,15 @@ import React, { useState } from "react";
 function App() {
   // let click="Hello"
   const [click, setClick] = useState("Hello");
-  const [color, setColor] = useState(false);
+  const [color, setColor] = useState("White");
   function clickHandler() {
     setClick("Submitted");
   }
   function MouseHandler() {
-    setColor(true);
+    setColor("Black");
   }
   function OutHandler() {
-    setColor(false);
+    setColor("White");
   }
   return (
     <div className="container">
@@ -20,7 +20,7 @@ function App() {
       <button
         onMouseOut={OutHandler}
         onMouseOver={MouseHandler}
-        style={{ backgroundColor: color ? "black" : "white" }}
+        style={{ backgroundColor: color }}
         onClick={clickHandler}
       >
         Submit
