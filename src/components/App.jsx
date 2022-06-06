@@ -2,10 +2,17 @@ import React, { useState } from "react";
 
 function App() {
   // let click="Hello"
-  const [click, setClick] = useState("Hello");
+  // const [click, setClick] = useState("Hello");
   const [color, setColor] = useState("White");
+  const [name, setName] = useState("");
+  const [fname, setfName] = useState("");
+  function changeHandler(event) {
+    setName(event.target.value);
+  }
   function clickHandler() {
-    setClick("Submitted");
+    // setClick("Submitted");
+    console.log("hello");
+    setfName(name);
   }
   function MouseHandler() {
     setColor("Black");
@@ -15,8 +22,12 @@ function App() {
   }
   return (
     <div className="container">
-      <h1>{click}</h1>
-      <input type="text" placeholder="What's your name?" />
+      <h1>Hello {fname}</h1>
+      <input
+        onChange={changeHandler}
+        type="text"
+        placeholder="What's your name?"
+      />
       <button
         onMouseOut={OutHandler}
         onMouseOver={MouseHandler}
